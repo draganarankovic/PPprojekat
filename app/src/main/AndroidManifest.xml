@@ -13,6 +13,15 @@
         android:theme="@style/Theme.BakaVisnja"
         tools:targetApi="31">
         <activity
+            android:name=".RaspolozivostActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Singupctivity"
+            android:exported="false" />
+        <activity
+            android:name=".WelcomeActivity"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>

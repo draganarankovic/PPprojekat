@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F3C6A9"
+    android:id="@+id/main"
+    tools:context=".WelcomeActivity">
+
+    <TextView
+        android:id="@+id/dobrodosli"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Добродошли!"
+        android:textSize="40sp"
+        android:textStyle="bold"
+        android:textColor="#E85265"
+        android:fontFamily="sans-serif-black"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="100dp"/>
+
+    <ImageView
+        android:id="@+id/slika2"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:src="@drawable/kolacic"
+        android:scaleType="fitCenter"
+        android:layout_below="@id/dobrodosli"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"/>
+
+
+    <EditText
+        android:id="@+id/korisnickoime1"
+        android:layout_width="300dp"
+        android:layout_height="55dp"
+        android:background="@drawable/border_shape"
+        android:hint="Корисничко име"
+        android:textColorHint="#FFEA6879"
+        android:textColor="#E85265"
+        android:layout_below="@id/slika2"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp"
+        android:inputType="text"/>
+
+    <EditText
+        android:id="@+id/sifra1"
+        android:layout_width="300dp"
+        android:layout_height="55dp"
+        android:background="@drawable/border_shape"
+        android:hint="Шифра"
+        android:textColor="#E85265"
+        android:textColorHint="#EA6879"
+        android:layout_below="@id/slika2"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="100dp"
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp"
+        android:inputType="textPassword"/>
+
+
+    <Button
+        android:id="@+id/ulogujse2"
+        android:layout_width="300dp"
+        android:layout_height="60dp"
+        android:background="@drawable/round_btn"
+        android:text="Улогуј се"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="580dp"
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp"
+        android:radius="30dp"
+        android:stateListAnimator="@null"
+        android:elevation="8dp"
+
+        />
+
+    <TextView
+        android:id="@+id/nematenalog"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Немате налог? "
+        android:textColor="#000000"
+        android:layout_below="@id/ulogujse2"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="80dp"/>
+
+    <TextView
+        android:id="@+id/registrujse1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Региструјте се"
+        android:textColor="#E85265"
+        android:layout_below="@id/ulogujse2"
+        android:layout_toEndOf="@id/nematenalog"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="5dp"/>
+    />
+
+
+
+
+
+</RelativeLayout>
