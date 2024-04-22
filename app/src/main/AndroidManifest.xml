@@ -13,6 +13,20 @@
         android:theme="@style/Theme.BakaVisnja"
         tools:targetApi="31">
         <activity
+            android:name=".NoviReceptActivity"
+            android:exported="false" />
+        <activity
+            android:name=".KuhinjaActivity"
+            android:exported="false"
+            android:label="@string/title_activity_kuhinja"
+            android:theme="@style/Theme.BakaVisnja.NoActionBar" />
+        <activity
+            android:name=".RaspolozenActivity"
+            android:exported="false" />
+        <activity
+            android:name=".NeraspolozenActivity"
+            android:exported="false" />
+        <activity
             android:name=".RaspolozivostActivity"
             android:exported="false" />
         <activity

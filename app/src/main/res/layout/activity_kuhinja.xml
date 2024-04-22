@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F3C6A9"
+    android:id="@+id/main"
+    tools:context=".WelcomeActivity">
+
+    <TextView
+        android:id="@+id/dobrodosli"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="•Бака Вишњина кухиња•"
+        android:textAlignment="center"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        android:textColor="#E85265"
+        android:fontFamily="sans-serif-black"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"/>
+
+
+    <TextView
+        android:id="@+id/slanajela"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="•Слана јела:"
+        android:textAlignment="center"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        android:textColor="#E85265"
+        android:fontFamily="sans-serif-black"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="100dp" />
+
+
+    <TextView
+        android:id="@+id/slatkajela"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="•Слатка јела:"
+        android:textAlignment="center"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        android:textColor="#E85265"
+        android:fontFamily="sans-serif-black"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="300dp" />
+
+
+    <TextView
+        android:id="@+id/mojirecepti"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="•Моји рецепти:"
+        android:textAlignment="center"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        android:textColor="#E85265"
+        android:fontFamily="sans-serif-black"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="500dp" />
+
+    <Button
+        android:id="@+id/mojnalog"
+        android:layout_width="180dp"
+        android:layout_height="60dp"
+        android:background="@drawable/round_btn"
+        android:text="мој налог"
+        android:textColor="#FFFFFF"
+        android:textSize="15sp"
+        android:layout_marginTop="650dp"
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp"
+        android:radius="30dp"
+        android:stateListAnimator="@null"
+        android:layout_marginLeft="10dp"
+        android:elevation="8dp"
+
+        />
+
+
+    <Button
+        android:id="@+id/novirecept"
+        android:layout_width="180dp"
+        android:layout_height="60dp"
+        android:background="@drawable/round_btn"
+        android:text="нови рецепт"
+        android:textColor="#FFFFFF"
+        android:textSize="15sp"
+        android:layout_marginTop="650dp"
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp"
+        android:radius="30dp"
+        android:stateListAnimator="@null"
+        android:layout_marginLeft="200dp"
+        android:elevation="8dp"
+
+        />
+</RelativeLayout>
