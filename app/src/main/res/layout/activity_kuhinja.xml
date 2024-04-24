@@ -62,40 +62,52 @@
         android:layout_marginLeft="30dp"
         android:layout_marginTop="500dp" />
 
-    <Button
-        android:id="@+id/mojnalog"
-        android:layout_width="180dp"
-        android:layout_height="60dp"
-        android:background="@drawable/round_btn"
-        android:text="мој налог"
-        android:textColor="#FFFFFF"
-        android:textSize="15sp"
-        android:layout_marginTop="650dp"
-        android:paddingStart="20dp"
-        android:paddingEnd="20dp"
-        android:radius="30dp"
-        android:stateListAnimator="@null"
-        android:layout_marginLeft="10dp"
-        android:elevation="8dp"
 
-        />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:orientation="horizontal"
+        android:gravity="center_horizontal"
+        android:layout_marginTop="650dp"
+        >
+
+        <Button
+            android:id="@+id/mojnalog"
+            android:layout_width="170dp"
+            android:layout_height="60dp"
+            android:background="@drawable/round_btn"
+            android:text="мој налог"
+            android:textColor="#FFFFFF"
+            android:textSize="15sp"
+            android:textAlignment="center"
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp"
+            android:layout_marginRight="20dp"
+            android:radius="30dp"
+            android:stateListAnimator="@null"
+            android:elevation="8dp"
+
+            />
 
 
     <Button
         android:id="@+id/novirecept"
-        android:layout_width="180dp"
+        android:layout_width="170dp"
         android:layout_height="60dp"
         android:background="@drawable/round_btn"
         android:text="нови рецепт"
         android:textColor="#FFFFFF"
         android:textSize="15sp"
-        android:layout_marginTop="650dp"
+
         android:paddingStart="20dp"
         android:paddingEnd="20dp"
         android:radius="30dp"
         android:stateListAnimator="@null"
-        android:layout_marginLeft="200dp"
         android:elevation="8dp"
 
+
         />
+    </LinearLayout>
+
+
 </RelativeLayout>

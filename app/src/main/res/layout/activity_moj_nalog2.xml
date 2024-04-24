@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:background="#F3C6A9"
+    android:id="@+id/main"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/korisnickoime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Корисничко име:"
+        android:textAlignment="center"
+        android:textSize="25sp"
+        android:layout_centerHorizontal="true"
+        android:textStyle="bold"
+        android:textColor="#E85265"
+        android:fontFamily="sans-serif-black"
+        android:layout_marginLeft="60dp"
+        android:layout_marginTop="330dp" />
+
+    <EditText
+        android:id="@+id/ime2"
+        android:layout_width="300dp"
+        android:layout_height="40dp"
+        android:background="@drawable/border_shape"
+        android:textColorHint="#FFEA6879"
+        android:textColor="#E85265"
+        android:layout_below="@id/mojnalog2"
+        android:layout_marginTop="300dp"
+        android:layout_marginLeft="30dp"
+        android:paddingStart="20dp"
+        android:layout_centerInParent="true"
+        android:paddingEnd="20dp"
+        android:inputType="text"/>
+
+    <TextView
+        android:id="@+id/mejl"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Мејл адреса:"
+        android:textAlignment="center"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        android:layout_centerHorizontal="true"
+        android:textColor="#E85265"
+        android:fontFamily="sans-serif-black"
+        android:layout_marginLeft="60dp"
+        android:layout_marginTop="430dp" />
+
+    <EditText
+        android:id="@+id/mejl2"
+        android:layout_width="300dp"
+        android:layout_height="40dp"
+        android:background="@drawable/border_shape"
+        android:textColorHint="#FFEA6879"
+        android:textColor="#E85265"
+        android:layout_below="@id/mojnalog2"
+        android:layout_marginTop="400dp"
+        android:layout_marginLeft="30dp"
+        android:paddingStart="20dp"
+        android:layout_centerInParent="true"
+        android:paddingEnd="20dp"
+        android:inputType="text"/>
+    <TextView
+        android:id="@+id/mojnalog2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="МОЈ НАЛОГ"
+        android:textAlignment="center"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:textColor="#E85265"
+        android:fontFamily="sans-serif-black"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="40dp"/>
+
+    <Button
+        android:id="@+id/odjavise"
+        android:layout_width="300dp"
+        android:layout_height="60dp"
+        android:background="@drawable/round_btn"
+        android:text="Одјави се"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="600dp"
+        android:radius="30dp"
+        android:stateListAnimator="@null"
+        android:elevation="8dp" />
+
+    <ImageView
+        android:id="@+id/slika2"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_below="@id/mojnalog2"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="110dp"
+        android:layout_centerInParent="true"
+        android:scaleType="fitCenter"
+        android:src="@drawable/kolacic" />
+</RelativeLayout>

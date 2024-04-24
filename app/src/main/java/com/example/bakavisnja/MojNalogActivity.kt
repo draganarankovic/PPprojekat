@@ -8,18 +8,19 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 
-class NoviReceptActivity : AppCompatActivity() {
+class MojNalogActivity : AppCompatActivity() {
 
-    private lateinit var btnDodaj: Button
+    private lateinit var btnOdjaviSe: Button
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        setContentView(R.layout.activity_novi_recept)
+        setContentView(R.layout.activity_moj_nalog2)
 
-        btnDodaj = findViewById(R.id.novirecept)
+        btnOdjaviSe = findViewById(R.id.odjavise)
 
-        btnDodaj.setOnClickListener{
-            val intent = Intent(this, KuhinjaActivity::class.java)
+        btnOdjaviSe.setOnClickListener{
+            val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
         }
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
