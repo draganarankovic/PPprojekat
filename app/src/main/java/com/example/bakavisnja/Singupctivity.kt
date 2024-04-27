@@ -11,6 +11,8 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.auth.User
 
@@ -24,13 +26,15 @@ class Singupctivity : AppCompatActivity() {
     private lateinit var mAuth : FirebaseAuth
 
 
-    private lateinit var db: FirebaseFirestore
+
+
+    private lateinit var mDbRef: DatabaseReference
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
 
         mAuth = FirebaseAuth.getInstance()
-        db = FirebaseFirestore.getInstance()
+
         setContentView(R.layout.activity_singupctivity)
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
@@ -53,25 +57,29 @@ class Singupctivity : AppCompatActivity() {
             val korisnik = edtKorisnik.text.toString()
             val sifra = edtSifra.text.toString()
 
-            signUp(email,sifra)
+            signUp(korisnik,email,sifra)
         }
     }
 
-    private fun signUp(email: String, sifra: String){
+    private fun signUp(korisnik: String, email: String, sifra: String){
         mAuth.createUserWithEmailAndPassword(email, sifra)
             .addOnCompleteListener(this) { task ->
                 if (task.isSuccessful) {
 
                   //  mAuth.currentUser?.let {addUsertoDB(korisnik,email,it.uid)}
+                  addUserTobase(korisnik,email,mAuth.currentUser?.uid!!)
                   val intent = Intent(this@Singupctivity, RaspolozivostActivity::class.java)
-                    startActivity(intent)
+                  startActivity(intent)
                 } else {
                   Toast.makeText(this@Singupctivity, "milaane draaganeee",Toast.LENGTH_SHORT).show()
                 }
             }
     }
 
-//   private fun addUserToDB(korisnik: String, email: String, uid: String) {
+   private fun addUserTobase(korisnik: String, email: String, uid: String) {
+       mDbRef = FirebaseDatabase.getInstance().getReference()
+       mDbRef.child("user").child(uid).setValue(User(korisnik, email, uid))
+
 //        val user = User(korisnik, email, uid)
 //        db.collection("users").document(uid)
 //            .set(user)
@@ -86,5 +94,5 @@ class Singupctivity : AppCompatActivity() {
 //            .addOnFailureListener { e ->
 //                Toast.makeText(this@SigupActavity, "Error -" + e.message, Toast.LENGTH_SHORT).show()
 //            }
-//    }
+    }
 }
