@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "261816654130",
+    "project_id": "bakavisnja-b4f26",
+    "storage_bucket": "bakavisnja-b4f26.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:261816654130:android:5fbc1b48ff1697aa3c9f2b",
+        "android_client_info": {
+          "package_name": "com.example.bakavisnja"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBya3oYd0C1AugMRPKOiC2x47o6gdf6bC0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

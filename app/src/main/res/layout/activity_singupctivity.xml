@@ -75,7 +75,7 @@
         android:paddingEnd="20dp"
         android:inputType="textPassword"/>
 
-    <EditText
+<!--    <EditText
         android:id="@+id/ponovisifru"
         android:layout_width="300dp"
         android:layout_height="55dp"
@@ -88,7 +88,7 @@
         android:layout_marginTop="240dp"
         android:paddingStart="20dp"
         android:paddingEnd="20dp"
-        android:inputType="textPassword"/>
+        android:inputType="textPassword"/> -->
 
     <Button
         android:id="@+id/registrujse3"
