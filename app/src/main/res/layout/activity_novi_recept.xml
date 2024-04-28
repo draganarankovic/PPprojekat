@@ -59,7 +59,7 @@
         android:layout_marginLeft="30dp"
         android:layout_marginTop="160dp"
         android:layout_width="wrap_content"
-        android:text="•Додај слике:"
+        android:text="•Изабери слику:"
         android:textAlignment="center"
         android:textColor="#E85265"
         android:textSize="25sp"
@@ -69,7 +69,7 @@
     <Button
         android:background="@drawable/round_btn"
         android:elevation="8dp"
-        android:id="@+id/novirecept1"
+        android:id="@+id/kamerica"
         android:layout_height="60dp"
         android:layout_marginLeft="30dp"
         android:layout_marginTop="200dp"
@@ -78,11 +78,36 @@
         android:paddingStart="20dp"
         android:radius="30dp"
         android:stateListAnimator="@null"
-        android:text="♥"
+        android:text="📸"
         android:textColor="#FFFFFF"
         android:textSize="15sp"
 
         />
+        <Button
+            android:background="@drawable/round_btn"
+            android:elevation="8dp"
+            android:id="@+id/dodaj_sliku"
+            android:layout_height="60dp"
+            android:layout_marginLeft="110dp"
+            android:layout_marginTop="200dp"
+            android:layout_width="100dp"
+            android:paddingEnd="20dp"
+            android:paddingStart="20dp"
+            android:radius="30dp"
+            android:stateListAnimator="@null"
+            android:text="Додај"
+            android:textColor="#FFFFFF"
+            android:textSize="15sp"
+
+            />
+
+        <ImageView
+            android:id="@+id/slicica"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginTop="200dp"
+            android:layout_marginLeft="230dp"
+            />
 
     <TextView
         android:fontFamily="sans-serif-black"
@@ -115,7 +140,7 @@
         android:background="@drawable/rectangle_shape"
         android:ems="10"
         android:gravity="start|top"
-        android:id="@+id/editTextTextMultiLine5"
+        android:id="@+id/sastojci"
         android:inputType="textMultiLine"
         android:layout_height="80dp"
         android:layout_marginLeft="30dp"
@@ -130,7 +155,7 @@
         android:background="@drawable/rectangle_shape"
         android:ems="10"
         android:gravity="start|top"
-        android:id="@+id/editTextTextMultiLine4"
+        android:id="@+id/koraci"
         android:inputType="textMultiLine"
         android:layout_height="80dp"
         android:layout_marginLeft="30dp"
