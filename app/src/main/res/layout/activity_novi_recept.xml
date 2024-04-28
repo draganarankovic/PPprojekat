@@ -1,210 +1,239 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_height="match_parent"
-    android:background="#F3C6A9"
-    android:id="@+id/main"
-    tools:context=".WelcomeActivity">
+    android:layout_width="match_parent"
+    android:background="#F3C6A9">
+
+    <RelativeLayout
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#F3C6A9"
+        tools:context=".NoviReceptActivity">
+
 
     <TextView
+        android:fontFamily="sans-serif-black"
         android:id="@+id/dobrodosli"
-        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="30dp"
+        android:layout_width="wrap_content"
         android:text="Нови рецепт"
         android:textAlignment="center"
-        android:textSize="35sp"
-        android:textStyle="bold"
         android:textColor="#E85265"
-        android:fontFamily="sans-serif-black"
-        android:layout_marginLeft="30dp"
-        android:layout_marginTop="30dp"/>
+        android:textSize="35sp"
+        android:textStyle="bold" />
 
     <TextView
+        android:fontFamily="sans-serif-black"
         android:id="@+id/slanajela"
-        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="80dp"
+        android:layout_width="wrap_content"
         android:text="•Име рецепта:"
         android:textAlignment="center"
-        android:textSize="25sp"
-        android:textStyle="bold"
         android:textColor="#E85265"
-        android:fontFamily="sans-serif-black"
-        android:layout_marginLeft="30dp"
-        android:layout_marginTop="80dp" />
+        android:textSize="25sp"
+        android:textStyle="bold" />
 
     <EditText
-        android:id="@+id/ime2"
-        android:layout_width="300dp"
-        android:layout_height="35dp"
         android:background="@drawable/border_shape"
-        android:textColorHint="#FFEA6879"
-        android:textColor="#E85265"
-        android:layout_marginTop="120dp"
+        android:id="@+id/ime2"
+        android:inputType="text"
+        android:layout_height="35dp"
         android:layout_marginLeft="30dp"
-        android:paddingStart="20dp"
+        android:layout_marginTop="120dp"
+        android:layout_width="300dp"
         android:paddingEnd="20dp"
-        android:inputType="text"/>
+        android:paddingStart="20dp"
+        android:textColor="#E85265"
+        android:textColorHint="#FFEA6879" />
 
     <TextView
+        android:fontFamily="sans-serif-black"
         android:id="@+id/slatkajela"
-        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="160dp"
+        android:layout_width="wrap_content"
         android:text="•Додај слике:"
         android:textAlignment="center"
-        android:textSize="25sp"
-        android:textStyle="bold"
         android:textColor="#E85265"
-        android:fontFamily="sans-serif-black"
-        android:layout_marginLeft="30dp"
-        android:layout_marginTop="160dp" />
+        android:textSize="25sp"
+        android:textStyle="bold" />
 
 
     <Button
-        android:id="@+id/novirecept1"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
         android:background="@drawable/round_btn"
+        android:elevation="8dp"
+        android:id="@+id/novirecept1"
+        android:layout_height="60dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="200dp"
+        android:layout_width="60dp"
+        android:paddingEnd="20dp"
+        android:paddingStart="20dp"
+        android:radius="30dp"
+        android:stateListAnimator="@null"
         android:text="♥"
         android:textColor="#FFFFFF"
         android:textSize="15sp"
-        android:layout_marginTop="200dp"
-        android:paddingStart="20dp"
-        android:paddingEnd="20dp"
-        android:radius="30dp"
-        android:stateListAnimator="@null"
-        android:layout_marginLeft="30dp"
-        android:elevation="8dp"
 
         />
+
     <TextView
+        android:fontFamily="sans-serif-black"
         android:id="@+id/mojirecepti1"
-        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="270dp"
+        android:layout_width="wrap_content"
         android:text="•Састојци:"
         android:textAlignment="center"
-        android:textSize="25sp"
-        android:textStyle="bold"
         android:textColor="#E85265"
-        android:fontFamily="sans-serif-black"
-        android:layout_marginLeft="30dp"
-        android:layout_marginTop="270dp" />
+        android:textSize="25sp"
+        android:textStyle="bold" />
 
 
     <TextView
+        android:fontFamily="sans-serif-black"
         android:id="@+id/mojirecept1i"
-        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="400dp"
+        android:layout_width="wrap_content"
         android:text="•Кораци:"
         android:textAlignment="center"
-        android:textSize="25sp"
-        android:textStyle="bold"
         android:textColor="#E85265"
-        android:fontFamily="sans-serif-black"
-        android:layout_marginLeft="30dp"
-        android:layout_marginTop="440dp" />
+        android:textSize="25sp"
+        android:textStyle="bold" />
 
     <EditText
-        android:id="@+id/editTextTextMultiLine5"
-        android:textColor="#E85265"
-        android:layout_width="300dp"
-        android:layout_height="120dp"
+        android:background="@drawable/rectangle_shape"
         android:ems="10"
         android:gravity="start|top"
+        android:id="@+id/editTextTextMultiLine5"
         android:inputType="textMultiLine"
+        android:layout_height="80dp"
         android:layout_marginLeft="30dp"
         android:layout_marginTop="310dp"
-        android:paddingStart="20dp"
+        android:layout_width="300dp"
         android:paddingEnd="20dp"
-        android:background="@drawable/rectangle_shape"/>
+        android:paddingStart="20dp"
+        android:textColor="#E85265" />
 
 
     <EditText
-        android:id="@+id/editTextTextMultiLine4"
-        android:layout_width="300dp"
-        android:layout_height="120dp"
-        android:textColor="#E85265"
+        android:background="@drawable/rectangle_shape"
         android:ems="10"
         android:gravity="start|top"
+        android:id="@+id/editTextTextMultiLine4"
         android:inputType="textMultiLine"
+        android:layout_height="80dp"
         android:layout_marginLeft="30dp"
-        android:layout_marginTop="480dp"
-        android:background="@drawable/rectangle_shape"
+        android:layout_marginTop="440dp"
+        android:layout_width="300dp"
+        android:paddingEnd="20dp"
         android:paddingStart="20dp"
-        android:paddingEnd="20dp"/>
+        android:textColor="#E85265" />
 
 
     <TextView
+        android:fontFamily="sans-serif-black"
         android:id="@+id/mo1jirecepti"
-        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="30dp"
-        android:layout_marginTop="620dp"
-        android:fontFamily="sans-serif-black"
+        android:layout_marginTop="520dp"
+        android:layout_width="wrap_content"
         android:text="•Категорија:"
         android:textAlignment="center"
         android:textColor="#E85265"
-        android:textSize="25sp"
+        android:textSize="22sp"
         android:textStyle="bold" />
 
     <Spinner
-        android:id="@+id/spinner3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAlignment="center"
         android:background="@drawable/border_shape"
-        android:textSize="22sp"
-        android:textStyle="bold"
-        android:textColor="#E85265"
         android:fontFamily="sans-serif-black"
+        android:id="@+id/spinnerK"
+        android:layout_height="wrap_content"
         android:layout_marginLeft="30dp"
-        android:layout_marginTop="670dp"/>
-
-
-    <TextView
-        android:id="@+id/mojire1cepti"
+        android:layout_marginTop="560dp"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="200dp"
-        android:layout_marginTop="620dp"
-        android:fontFamily="sans-serif-black"
-        android:text="•Време:"
+        android:paddingEnd="20dp"
+        android:paddingStart="20dp"
         android:textAlignment="center"
         android:textColor="#E85265"
-        android:textSize="25sp"
-        android:textStyle="bold" />
-
-    <Spinner
-        android:id="@+id/spinner5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAlignment="center"
-        android:background="@drawable/border_shape"
         android:textSize="22sp"
         android:textStyle="bold"
-        android:textColor="#E85265"
-        android:fontFamily="sans-serif-black"
-        android:layout_marginLeft="200dp"
-        android:layout_marginTop="670dp"/>
 
+        />
 
 
     <Button
-        android:id="@+id/novirecept"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:background="@drawable/round_btn"
-        android:text="+"
-        android:textColor="#FFFFFF"
-        android:textSize="40dp"
-        android:textAlignment="center"
-        android:layout_marginTop="650dp"
-        android:layout_marginLeft="280dp"
-        android:paddingStart="20dp"
+        android:elevation="8dp"
+        android:id="@+id/novirecept"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="200dp"
+        android:layout_marginTop="730dp"
+        android:layout_width="wrap_content"
         android:paddingEnd="20dp"
+        android:paddingStart="20dp"
         android:radius="30dp"
         android:stateListAnimator="@null"
-        android:elevation="8dp"
+        android:text="+"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        android:textSize="40dp"
+
 
         />
-</RelativeLayout>
+
+
+    <TextView
+        android:fontFamily="sans-serif-black"
+        android:id="@+id/mojire1cepti"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="620dp"
+        android:layout_width="wrap_content"
+        android:text="•Време:"
+        android:textAlignment="center"
+        android:textColor="#E85265"
+        android:textSize="22sp"
+        android:textStyle="bold" />
+
+    <Spinner
+        android:background="@drawable/border_shape"
+        android:fontFamily="sans-serif-black"
+        android:id="@+id/spinnerV"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="660dp"
+        android:layout_width="wrap_content"
+        android:paddingEnd="20dp"
+        android:paddingStart="20dp"
+        android:textAlignment="center"
+        android:textColor="#E85265"
+        android:textSize="22sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:fontFamily="sans-serif-black"
+        android:id="@+id/dodaj"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="730dp"
+        android:layout_width="wrap_content"
+        android:text="•Додај рецепт"
+        android:textAlignment="center"
+        android:textColor="#E85265"
+        android:textSize="22sp"
+        android:textStyle="bold" />
+
+    </RelativeLayout>
+</ScrollView>
+
