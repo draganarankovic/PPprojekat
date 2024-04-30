@@ -1,11 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:background="#F3C6A9">
+
+<RelativeLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#F3C6A9"
     android:id="@+id/main"
     tools:context=".WelcomeActivity">
+
 
     <TextView
         android:id="@+id/dobrodosli"
@@ -32,7 +39,7 @@
         android:textColor="#E85265"
         android:fontFamily="sans-serif-black"
         android:layout_marginLeft="30dp"
-        android:layout_marginTop="100dp" />
+        android:layout_marginTop="60dp" />
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -50,7 +57,7 @@
         android:textColor="#E85265"
         android:fontFamily="sans-serif-black"
         android:layout_marginLeft="30dp"
-        android:layout_marginTop="300dp" />
+        android:layout_marginTop="295dp" />
 
 
     <TextView
@@ -64,7 +71,7 @@
         android:textColor="#E85265"
         android:fontFamily="sans-serif-black"
         android:layout_marginLeft="30dp"
-        android:layout_marginTop="500dp" />
+        android:layout_marginTop="530dp" />
 
 
     <LinearLayout
@@ -72,7 +79,7 @@
         android:layout_height="100dp"
         android:orientation="horizontal"
         android:gravity="center_horizontal"
-        android:layout_marginTop="650dp"
+        android:layout_marginTop="760dp"
         >
 
         <Button
@@ -114,4 +121,47 @@
     </LinearLayout>
 
 
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/lista_slanih"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="@id/slatkajela"
+        app:layout_constraintEnd_toEndOf="@id/slatkajela"
+        app:layout_constraintTop_toTopOf="@id/slanajela"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        android:layout_marginTop="90dp"
+        tools:listitem="@layout/recept_item">
+
+    </androidx.recyclerview.widget.RecyclerView>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/lista_slatkih"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="@id/slatkajela"
+        app:layout_constraintEnd_toEndOf="@id/slatkajela"
+        app:layout_constraintTop_toTopOf="@id/slanajela"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        android:layout_marginTop="320dp"
+        tools:listitem="@layout/recept_item">
+
+    </androidx.recyclerview.widget.RecyclerView>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/lista_mojih"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="@id/slatkajela"
+        app:layout_constraintEnd_toEndOf="@id/slatkajela"
+        app:layout_constraintTop_toTopOf="@id/slanajela"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        android:layout_marginTop="560dp"
+        tools:listitem="@layout/recept_item">
+    </androidx.recyclerview.widget.RecyclerView>
+
 </RelativeLayout>
+
+</ScrollView>

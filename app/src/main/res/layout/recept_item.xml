@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#F3C6A9"
+    android:layout_margin="1dp">
+
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/abv"
+    android:layout_width="wrap_content"
+    android:layout_height="180dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardElevation = "8dp"
+    android:background="#F3C6A9"
+    android:layout_margin="16dp"
+    android:orientation="horizontal"
+    android:layout_centerInParent="true">
+
+    <LinearLayout
+        android:background="#F3C6A9"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:layout_centerInParent="true"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:background="#F3C6A9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/slikaa"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@drawable/kolacic">
+            </ImageView>
+
+            <TextView
+                android:id="@+id/naslov_recepta"
+                android:layout_width="100dp"
+                android:layout_height="30dp"
+                android:text="proba"
+                android:textAlignment="center"
+                android:textColor="@color/white"></TextView>
+
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+</androidx.cardview.widget.CardView>
+
+</RelativeLayout>
