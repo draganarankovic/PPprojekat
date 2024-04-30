@@ -39,6 +39,7 @@
                 android:src="@drawable/kolacic">
             </ImageView>
 
+
             <TextView
                 android:id="@+id/naslov_recepta"
                 android:layout_width="100dp"

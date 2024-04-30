@@ -1,8 +1,10 @@
 package com.example.bakavisnja
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
+import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -23,6 +25,8 @@ class KuhinjaActivity : AppCompatActivity() {
     private lateinit var listaSlanih: RecyclerView
     private lateinit var listaSlatkih: RecyclerView
     private lateinit var receptArrayList: ArrayList<Recept>
+
+    @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -30,6 +34,7 @@ class KuhinjaActivity : AppCompatActivity() {
 
         btnMojNalog = findViewById(R.id.mojnalog)
         btnNoviRecept = findViewById(R.id.novirecept)
+
 
         listaSlanih = findViewById(R.id.lista_slanih)
 //        listaSlanih.layoutManager = LinearLayoutManager(this)

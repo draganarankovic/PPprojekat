@@ -1,178 +1,159 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
     android:background="#F3C6A9"
-    android:id="@+id/main"
-    tools:context=".WelcomeActivity">
+    android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/dobrodosli"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text=""
-        android:textAlignment="center"
-        android:textSize="35sp"
-        android:textStyle="bold"
-        android:textColor="#E85265"
-        android:fontFamily="sans-serif-black"
-        android:layout_marginLeft="30dp"
-        android:layout_marginTop="30dp"/>
+    <RelativeLayout
+        android:id="@+id/naslov_recepta"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize">
 
-    <EditText
-        android:id="@+id/ime2"
-        android:layout_width="wrap_content"
-        android:layout_height="35dp"
-        android:background="@drawable/border_shape"
-        android:textColorHint="#FFEA6879"
-        android:textColor="#E85265"
-        android:layout_below="@id/slika3"
-        android:layout_marginTop="120dp"
-        android:layout_marginLeft="30dp"
-        android:paddingStart="20dp"
-        android:paddingEnd="20dp"
-        android:inputType="text"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Рецепт"
+            android:layout_centerInParent="true"
+            android:textColor="#E85265"
+            android:textSize="30dp"
+            android:textStyle="bold"/>
+    </RelativeLayout>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:padding="10dp"
+        android:layout_below="@id/naslov_recepta"
+        android:layout_height="wrap_content">
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
-    <Button
-        android:id="@+id/novirecept1"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:background="@drawable/round_btn"
-        android:text="♥"
-        android:textColor="#FFFFFF"
-        android:textSize="15sp"
-        android:layout_marginTop="200dp"
-        android:paddingStart="20dp"
-        android:paddingEnd="20dp"
-        android:radius="30dp"
-        android:stateListAnimator="@null"
-        android:layout_marginLeft="30dp"
-        android:elevation="8dp"
+<!-- Informacije o receptu-->
+            <RelativeLayout
 
-        />
-    <TextView
-        android:id="@+id/mojirecepti1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="•Састојци:"
-        android:textAlignment="center"
-        android:textSize="25sp"
-        android:textStyle="bold"
-        android:textColor="#E85265"
-        android:fontFamily="sans-serif-black"
-        android:layout_marginLeft="30dp"
-        android:layout_marginTop="270dp" />
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
 
+                <RelativeLayout
+                    android:id="@+id/info"
+                android:layout_width="110dp"
+                android:layout_height="150dp"
+                android:layout_marginEnd="5dp"
+                android:background="@color/black">
 
-    <TextView
-        android:id="@+id/mojirecept1i"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="•Кораци:"
-        android:textAlignment="center"
-        android:textSize="25sp"
-        android:textStyle="bold"
-        android:textColor="#E85265"
-        android:fontFamily="sans-serif-black"
-        android:layout_marginLeft="30dp"
-        android:layout_marginTop="440dp" />
+                <ProgressBar
+                    android:id="@+id/progressBar"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"/>
 
-    <EditText
-        android:id="@+id/editTextTextMultiLine5"
-        android:layout_width="300dp"
-        android:layout_height="120dp"
-        android:ems="10"
-        android:gravity="start|top"
-        android:inputType="textMultiLine"
-        android:layout_marginLeft="30dp"
-        android:layout_marginTop="310dp"
-        android:background="@drawable/rectangle_shape"/>
+            </RelativeLayout>
 
+<!--                Ime recepta -->
+                <TextView
+                    android:id="@+id/ime_recepta"
+                    style="@style/TextAppearance.MaterialComponents.Headline6"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_toEndOf="@id/info"
+                    android:textColor="#E85265"
+                    android:text="Име рецепта"
+                    />
 
-    <EditText
-        android:id="@+id/editTextTextMultiLine4"
-        android:layout_width="300dp"
-        android:layout_height="120dp"
-        android:ems="10"
-        android:gravity="start|top"
-        android:inputType="textMultiLine"
-        android:layout_marginLeft="30dp"
-        android:layout_marginTop="480dp"
-        android:background="@drawable/rectangle_shape"/>
+                <TableLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/ime_recepta"
+                    android:layout_toEndOf="@id/info">
+                    <TableRow>
 
-    <TextView
-        android:id="@+id/mo1jirecepti"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="•Категорија:"
-        android:textAlignment="center"
-        android:textSize="25sp"
-        android:textStyle="bold"
-        android:textColor="#E85265"
-        android:fontFamily="sans-serif-black"
-        android:layout_marginLeft="30dp"
-        android:layout_marginTop="620dp" />
+                        <TextView
+                            android:id="@+id/kategorijaLabelTV"
+                            style="@style/TextAppearance.MaterialComponents.Caption"
+                            android:layout_height="wrap_content"
+                            android:layout_width="wrap_content"
+                            android:text="Категорија:"
+                            android:textSize="18dp"
+                            android:textColor="#E85265"
+                            android:layout_marginEnd="5dp"
+                            />
+                        <TextView
+                            android:id="@+id/kategorijaTV"
+                            style="@style/TextAppearance.MaterialComponents.Caption"
+                            android:layout_weight="1"
+                            android:layout_height="wrap_content"
+                            android:layout_width="wrap_content"
+                            android:layout_marginEnd="5dp"
+                            android:text="Слатко/Слано"
+                            android:textSize="18dp"
+                            android:textColor="#E85265"
+                            />
 
 
-    <Spinner
-        android:id="@+id/spinner3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAlignment="center"
-        android:background="@drawable/border_shape"
-        android:textSize="22sp"
-        android:textStyle="bold"
-        android:textColor="#E85265"
-        android:fontFamily="sans-serif-black"
-        android:layout_marginLeft="30dp"
-        android:layout_marginTop="670dp"/>
+                    </TableRow>
+
+                    <TableRow>
+
+                        <TextView
+                            android:id="@+id/vremeLabelTV"
+                            style="@style/TextAppearance.MaterialComponents.Caption"
+                            android:layout_height="wrap_content"
+                            android:layout_width="wrap_content"
+                            android:text="Потребно време:"
+                            android:textColor="#E85265"
+                            android:textSize="18dp"
+                            android:layout_marginEnd="5dp"
+                            />
+                        <TextView
+                            android:id="@+id/vremeTV"
+                            style="@style/TextAppearance.MaterialComponents.Caption"
+                            android:layout_weight="1"
+                            android:layout_height="wrap_content"
+                            android:layout_width="wrap_content"
+                            android:layout_marginEnd="5dp"
+                            android:text="време"
+                            android:textSize="18dp"
+                            android:textColor="#E85265"
+                            />
+
+                    </TableRow>
+
+                </TableLayout>
+
+</RelativeLayout>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/sastojciTV"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="Састојци:"
+                    android:textSize="25dp"
+                    android:textStyle="bold"
+                    android:textColor="#E85265"/>
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/koraciTV"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="Кораци:"
+                    android:textSize="25dp"
+                    android:textStyle="bold"
+                    android:textColor="#E85265"/>
+            </RelativeLayout>
 
 
-    <TextView
-        android:id="@+id/mojire1cepti"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="200dp"
-        android:layout_marginTop="620dp"
-        android:fontFamily="sans-serif-black"
-        android:text="•Време:"
-        android:textAlignment="center"
-        android:textColor="#E85265"
-        android:textSize="25sp"
-        android:textStyle="bold" />
-
-    <Spinner
-        android:id="@+id/spinner5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAlignment="center"
-        android:background="@drawable/border_shape"
-        android:textSize="22sp"
-        android:textStyle="bold"
-        android:textColor="#E85265"
-        android:fontFamily="sans-serif-black"
-        android:layout_marginLeft="200dp"
-        android:layout_marginTop="670dp"/>
+        </LinearLayout>
 
 
 
-    <Button
-        android:id="@+id/novirecept"
-        android:layout_width="260dp"
-        android:layout_height="60dp"
-        android:background="@drawable/round_btn"
-        android:text="додај"
-        android:textColor="#FFFFFF"
-        android:textSize="15sp"
-        android:layout_marginTop="700dp"
-        android:paddingStart="20dp"
-        android:paddingEnd="20dp"
-        android:radius="30dp"
-        android:stateListAnimator="@null"
-        android:layout_marginLeft="200dp"
-        android:elevation="8dp"
-
-        />
+    </ScrollView>
 </RelativeLayout>
