@@ -60,26 +60,12 @@
         android:layout_marginTop="295dp" />
 
 
-    <TextView
-        android:id="@+id/mojirecepti"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="•Моји рецепти:"
-        android:textAlignment="center"
-        android:textSize="25sp"
-        android:textStyle="bold"
-        android:textColor="#E85265"
-        android:fontFamily="sans-serif-black"
-        android:layout_marginLeft="30dp"
-        android:layout_marginTop="530dp" />
-
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="100dp"
         android:orientation="horizontal"
         android:gravity="center_horizontal"
-        android:layout_marginTop="760dp"
+        android:layout_marginTop="660dp"
         >
 
         <Button
@@ -147,19 +133,6 @@
         android:layout_marginTop="320dp"
         tools:listitem="@layout/recept_item">
 
-    </androidx.recyclerview.widget.RecyclerView>
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/lista_mojih"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintBottom_toBottomOf="@id/slatkajela"
-        app:layout_constraintEnd_toEndOf="@id/slatkajela"
-        app:layout_constraintTop_toTopOf="@id/slanajela"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        android:layout_marginTop="560dp"
-        tools:listitem="@layout/recept_item">
     </androidx.recyclerview.widget.RecyclerView>
 
 </RelativeLayout>

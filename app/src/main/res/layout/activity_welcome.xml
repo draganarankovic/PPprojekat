@@ -35,7 +35,7 @@
         android:layout_width="300dp"
         android:layout_height="55dp"
         android:background="@drawable/border_shape"
-        android:hint="Корисничко име"
+        android:hint="Мејл адреса"
         android:textColorHint="#FFEA6879"
         android:textColor="#E85265"
         android:layout_below="@id/slika2"
