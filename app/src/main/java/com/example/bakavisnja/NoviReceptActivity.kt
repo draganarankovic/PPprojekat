@@ -160,7 +160,7 @@ class NoviReceptActivity : AppCompatActivity() {
             progressDialog.setMessage("Сачекајте...")
             progressDialog.show()
 
-            val ref: StorageReference = FirebaseStorage.getInstance().getReference().child(UUID.randomUUID().toString())
+            val ref: StorageReference = FirebaseStorage.getInstance().getReference("User/"+mAuth.currentUser?.uid+".jpg")
             ref.putFile(fileUri!!).addOnSuccessListener {
                 progressDialog.dismiss()
                 Toast.makeText(applicationContext,"Слика је успешно учитана!",Toast.LENGTH_SHORT).show()

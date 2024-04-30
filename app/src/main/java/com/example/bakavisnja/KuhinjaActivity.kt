@@ -52,6 +52,16 @@ class KuhinjaActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
+        listaSlanih.setOnClickListener{
+            val intent = Intent(this, OtvorenReceptActivity::class.java)
+            startActivity(intent)
+        }
+        //val adapter = MyAdapter(receptArrayList) // userList je lista recepata koju koristite
+        //listaSlanih.adapter = adapter
+
+        //Postavite LayoutManager ako je potrebno
+        //listaSlanih.layoutManager = LinearLayoutManager(this)
+
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
