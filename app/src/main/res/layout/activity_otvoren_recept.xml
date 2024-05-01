@@ -19,11 +19,12 @@
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:layout_marginLeft="30dp"
+            android:layout_marginTop="10dp"
             android:fontFamily="sans-serif-black"
             android:text="•Име рецепта:"
             android:textAlignment="center"
             android:textColor="#E85265"
-            android:textSize="25sp"
+            android:textSize="30sp"
             android:textStyle="bold" />
 
 
@@ -31,7 +32,7 @@
             android:id="@+id/slikaa"
             android:layout_width="wrap_content"
             android:layout_height="200dp"
-            android:layout_marginTop="50dp"
+            android:layout_marginTop="60dp"
             android:src="@drawable/kolacic"
             android:layout_centerHorizontal="true"
             />
@@ -51,12 +52,12 @@
 
 
         <TextView
-            android:fontFamily="sans-serif-black"
             android:id="@+id/mojirecept1i"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="30dp"
-            android:layout_marginTop="400dp"
-            android:layout_width="wrap_content"
+            android:layout_marginTop="420dp"
+            android:fontFamily="sans-serif-black"
             android:text="•Кораци:"
             android:textAlignment="center"
             android:textColor="#E85265"
@@ -69,7 +70,7 @@
             android:gravity="start|top"
             android:id="@+id/sastojci"
             android:inputType="textMultiLine"
-            android:layout_height="80dp"
+            android:layout_height="100dp"
             android:layout_marginLeft="30dp"
             android:layout_marginTop="310dp"
             android:layout_width="300dp"
@@ -78,15 +79,15 @@
             android:textColor="#E85265" />
 
 
-        <EditText
+        <TextView
             android:background="@drawable/rectangle_shape"
             android:ems="10"
             android:gravity="start|top"
             android:id="@+id/koraci"
+            android:layout_height="100dp"
             android:inputType="textMultiLine"
-            android:layout_height="80dp"
             android:layout_marginLeft="30dp"
-            android:layout_marginTop="440dp"
+            android:layout_marginTop="460dp"
             android:layout_width="300dp"
             android:paddingEnd="20dp"
             android:paddingStart="20dp"
@@ -98,7 +99,7 @@
             android:id="@+id/mo1jirecepti"
             android:layout_height="wrap_content"
             android:layout_marginLeft="30dp"
-            android:layout_marginTop="520dp"
+            android:layout_marginTop="570dp"
             android:layout_width="wrap_content"
             android:text="•Категорија:"
             android:textAlignment="center"
@@ -106,20 +107,20 @@
             android:textSize="22sp"
             android:textStyle="bold" />
 
-        <EditText
+        <TextView
             android:background="@drawable/border_shape"
             android:fontFamily="sans-serif-black"
             android:id="@+id/kategorija"
             android:layout_height="wrap_content"
             android:layout_marginLeft="30dp"
-            android:layout_marginTop="560dp"
+            android:layout_marginTop="610dp"
             android:layout_width="wrap_content"
             android:paddingEnd="20dp"
             android:paddingStart="20dp"
             android:textAlignment="center"
             android:textColor="#E85265"
             android:textSize="22sp"
-            android:textStyle="bold"
+
 
             />
 
@@ -129,7 +130,7 @@
             android:id="@+id/mojire1cepti"
             android:layout_height="wrap_content"
             android:layout_marginLeft="30dp"
-            android:layout_marginTop="620dp"
+            android:layout_marginTop="650dp"
             android:layout_width="wrap_content"
             android:text="•Време:"
             android:textAlignment="center"
@@ -137,20 +138,19 @@
             android:textSize="22sp"
             android:textStyle="bold" />
 
-        <EditText
+        <TextView
             android:background="@drawable/border_shape"
             android:fontFamily="sans-serif-black"
             android:id="@+id/vreme"
             android:layout_height="wrap_content"
             android:layout_marginLeft="30dp"
-            android:layout_marginTop="660dp"
+            android:layout_marginTop="690dp"
             android:layout_width="wrap_content"
             android:paddingEnd="20dp"
             android:paddingStart="20dp"
             android:textAlignment="center"
             android:textColor="#E85265"
-            android:textSize="22sp"
-            android:textStyle="bold" />
+            android:textSize="22sp" />
 
     </RelativeLayout>
 </ScrollView>

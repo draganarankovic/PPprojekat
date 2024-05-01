@@ -1,8 +1,10 @@
 package com.example.bakavisnja
 
 import android.annotation.SuppressLint
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import android.view.View
 import android.widget.Button
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
@@ -36,7 +38,6 @@ class KuhinjaActivity : AppCompatActivity() {
         btnMojNalog = findViewById(R.id.mojnalog)
         btnNoviRecept = findViewById(R.id.novirecept)
 
-
         listaSlanih = findViewById(R.id.lista_slanih)
 //        listaSlanih.layoutManager = LinearLayoutManager(this)
 //        listaSlanih.setHasFixedSize(true)
@@ -48,8 +49,7 @@ class KuhinjaActivity : AppCompatActivity() {
         receptArrayListSlano = arrayListOf<Recept>()
         receptArrayListSlatko = arrayListOf<Recept>()
 
-        getReceptData()
-
+        getReceptData(this)
 
         btnMojNalog.setOnClickListener{
             val intent = Intent(this, MojNalogActivity::class.java)
@@ -77,7 +77,7 @@ class KuhinjaActivity : AppCompatActivity() {
         }
     }
 
-    private fun getReceptData() {
+    private fun getReceptData(context: Context) {
 
         dbref = FirebaseDatabase.getInstance().getReference("Recept")
         dbref.addValueEventListener(object: ValueEventListener{
@@ -93,8 +93,8 @@ class KuhinjaActivity : AppCompatActivity() {
                             receptArrayListSlatko.add(recept!!)
                         }
                     }
-                    listaSlanih.adapter = MyAdapter(receptArrayListSlano)
-                    listaSlatkih.adapter = MyAdapter(receptArrayListSlatko)
+                    listaSlanih.adapter = MyAdapter(context, receptArrayListSlano)
+                    listaSlatkih.adapter = MyAdapter(context, receptArrayListSlatko)
                 }
             }
 
