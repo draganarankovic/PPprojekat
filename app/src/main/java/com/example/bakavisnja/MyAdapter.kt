@@ -1,9 +1,12 @@
 package com.example.bakavisnja
 
 import android.annotation.SuppressLint
+import android.content.ContentValues.TAG
 import android.content.Context
 import android.content.Intent
+import android.graphics.Bitmap
 import android.media.Image
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -20,6 +23,8 @@ import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
 import com.google.firebase.storage.FirebaseStorage
 import kotlinx.coroutines.handleCoroutineException
+import com.bumptech.glide.Glide;
+import java.io.ByteArrayOutputStream
 
 
 class MyAdapter(var context: Context, private val userList: ArrayList<Recept>) : RecyclerView.Adapter<MyAdapter.MyViewHolder>() {
@@ -32,31 +37,7 @@ class MyAdapter(var context: Context, private val userList: ArrayList<Recept>) :
 
     }
 
-
     @SuppressLint("MissingInflatedId")
-//    fun getView(position: Int, contentView: View?, parent: ViewGroup): View{
-//
-//        val inflater : LayoutInflater = LayoutInflater.from(parent.context)
-//        val view: View = inflater.inflate(R.layout.activity_recept, null)
-//
-//        val slika : ImageView = view.findViewById(R.id.slikaa)
-//        val naziv : TextView = view.findViewById(R.id.naslov_recepta)
-//        val kategorija : TextView = view.findViewById(R.id.kategorija)
-//        val vreme : TextView = view.findViewById(R.id.vreme)
-//        val sastojci : TextView = view.findViewById(R.id.sastojci)
-//        val koraci : TextView = view.findViewById(R.id.koraci)
-//
-//        slika.setImageResource(userList[position].slika)
-//        naziv.text = userList[position].naziv
-//        kategorija.text = userList[position].kategorija
-//        vreme.text = userList[position].vreme
-//        sastojci.setText(userList[position].sastojci)
-//        koraci.setText(userList[position].koraci)
-//
-//        return view
-//    }
-
-
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         val currentitem = userList[position]
 
@@ -66,16 +47,21 @@ class MyAdapter(var context: Context, private val userList: ArrayList<Recept>) :
         holder.sastojci = currentitem.sastojci
         holder.vreme = currentitem.vreme
 
-        val storageRef = FirebaseStorage.getInstance().reference.child("storage/bakavisnja-b4f26.appspot.com/files/${currentitem.slika}")
-        storageRef.downloadUrl.addOnSuccessListener { uri ->
-            holder.slika.setImageURI(uri)
-        }
- //       holder.slika.setImageResource(currentitem.slika)
-//        holder.kategorija.text = currentitem.kategorija
-//        holder.koraci.text = currentitem.koraci
-//        holder.sastojci.text = currentitem.sastojci
-//        holder.vreme.text = currentitem.vreme
+        val storageRef = FirebaseStorage.getInstance()
+            .getReferenceFromUrl("gs://bakavisnja-b4f26.appspot.com/")
+            .child("User")
+            .child("${currentitem.id}.jpg")
 
+        val TEN_MEGABYTE: Long = 5 * 1024 * 1024
+        storageRef.getBytes(TEN_MEGABYTE).addOnSuccessListener{
+            bytes -> holder.slikaByte = bytes
+        }.addOnFailureListener{
+            Log.e(TAG, "Greška prilikom preuzimanja slike: ")
+        }
+
+        Glide.with(context)
+            .load(storageRef)
+            .into(holder.slika)
     }
 
     override fun getItemCount(): Int {
@@ -89,7 +75,7 @@ class MyAdapter(var context: Context, private val userList: ArrayList<Recept>) :
         var koraci: String? = "непознато"
         var sastojci: String? = "непознато"
         var vreme: String? = "непознато"
-
+        var slikaByte: ByteArray? = ByteArray(0)
         init {
             itemView.setOnClickListener {
                 val intent = Intent(context, OtvorenReceptActivity::class.java)
@@ -98,13 +84,9 @@ class MyAdapter(var context: Context, private val userList: ArrayList<Recept>) :
                 intent.putExtra("kategorija", kategorija)
                 intent.putExtra("sastojci", sastojci)
                 intent.putExtra("vreme", vreme)
+                intent.putExtra("slika", slikaByte)
                 context.startActivity(intent)
             }
         }
-
     }
-}
-
-private fun ImageView.setImageResource(slika: String?) {
-
 }

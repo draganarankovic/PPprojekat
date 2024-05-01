@@ -41,7 +41,11 @@ class NoviReceptActivity : AppCompatActivity() {
     private lateinit var selektovanaKategorija: String
     private lateinit var selektovanoVreme: String
     private lateinit var imgURL: String
+    private var createTimestamp: Long = 0
     var fileUri: Uri? = null
+    private var imerecepta = ""
+    private var sastojci = ""
+    private var koraci = ""
 
     val kategorije = arrayOf("слатко", "слано")
     val vreme = arrayOf("15-30 минута", "30-60 минута", "више од сат времена")
@@ -59,6 +63,7 @@ class NoviReceptActivity : AppCompatActivity() {
         btnSlika = findViewById(R.id.kamerica)
         btnDodajSliku = findViewById(R.id.dodaj_sliku)
         imSlika = findViewById(R.id.slicica)
+        createTimestamp = System.currentTimeMillis()
 
         btnSlika.setOnClickListener {
             val intent = Intent()
@@ -160,7 +165,7 @@ class NoviReceptActivity : AppCompatActivity() {
             progressDialog.setMessage("Сачекајте...")
             progressDialog.show()
 
-            val ref: StorageReference = FirebaseStorage.getInstance().getReference("User/"+mAuth.currentUser?.uid+".jpg")
+            val ref: StorageReference = FirebaseStorage.getInstance().getReference("User/"+createTimestamp+".jpg")
             ref.putFile(fileUri!!).addOnSuccessListener {
                 progressDialog.dismiss()
                 Toast.makeText(applicationContext,"Слика је успешно учитана!",Toast.LENGTH_SHORT).show()
@@ -171,9 +176,7 @@ class NoviReceptActivity : AppCompatActivity() {
         }
     }
 
-    private var imerecepta = ""
-    private var sastojci = ""
-    private var koraci = ""
+
 
     private fun validateData() {
         imerecepta = binding.ime2.text.toString().trim()
@@ -192,9 +195,9 @@ class NoviReceptActivity : AppCompatActivity() {
     private fun addReceptFirebase() {
         progressDialog.show()
 
-        val timestamp = System.currentTimeMillis()
+
         val hashMap = HashMap<String,Any>()
-        hashMap["id"] = "$timestamp"
+        hashMap["id"] = createTimestamp.toString()
         hashMap["naziv"] = imerecepta
         hashMap["sastojci"] = sastojci
         hashMap["koraci"] = koraci
@@ -202,10 +205,10 @@ class NoviReceptActivity : AppCompatActivity() {
         hashMap["vreme"] = selektovanoVreme
         hashMap["slika"] = imgURL
 
-        hashMap["timestamp"] = timestamp
+        hashMap["timestamp"] = createTimestamp
         hashMap["uid"] = "${mAuth.uid}"
         val ref = FirebaseDatabase.getInstance().getReference("Recept")
-        ref.child("$timestamp")
+        ref.child("$createTimestamp")
             .setValue(hashMap)
             .addOnSuccessListener {
                 progressDialog.dismiss()

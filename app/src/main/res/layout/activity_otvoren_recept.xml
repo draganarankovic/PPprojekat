@@ -79,7 +79,7 @@
             android:textColor="#E85265" />
 
 
-        <TextView
+        <EditText
             android:background="@drawable/rectangle_shape"
             android:ems="10"
             android:gravity="start|top"
