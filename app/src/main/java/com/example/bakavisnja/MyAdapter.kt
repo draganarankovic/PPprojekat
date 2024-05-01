@@ -1,5 +1,6 @@
 package com.example.bakavisnja
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.media.Image
 import android.view.LayoutInflater
@@ -16,11 +17,14 @@ import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
+import com.google.firebase.storage.FirebaseStorage
+import kotlinx.coroutines.handleCoroutineException
+
 
 class MyAdapter(private val userList: ArrayList<Recept>) : RecyclerView.Adapter<MyAdapter.MyViewHolder>() {
 
     private lateinit var nazivRecepta: TextView
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyAdapter.MyViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
         val itemView = LayoutInflater.from(parent.context).inflate(R.layout.recept_item,
             parent, false)
         return MyViewHolder(itemView)
@@ -28,6 +32,7 @@ class MyAdapter(private val userList: ArrayList<Recept>) : RecyclerView.Adapter<
     }
 
 
+    @SuppressLint("MissingInflatedId")
     fun getView(position: Int, contentView: View?, parent: ViewGroup): View{
 
         val inflater : LayoutInflater = LayoutInflater.from(parent.context)
@@ -51,16 +56,17 @@ class MyAdapter(private val userList: ArrayList<Recept>) : RecyclerView.Adapter<
     }
 
 
-    override fun onBindViewHolder(holder: MyAdapter.MyViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         val currentitem = userList[position]
 
         holder.naziv.text = currentitem.naziv
 
 
-
-
-
-        holder.slika.setImageResource(currentitem.slika)
+        val storageRef = FirebaseStorage.getInstance().reference.child("storage/bakavisnja-b4f26.appspot.com/files/${currentitem.slika}")
+        storageRef.downloadUrl.addOnSuccessListener { uri ->
+            holder.slika.setImageURI(uri)
+        }
+ //       holder.slika.setImageResource(currentitem.slika)
 //        holder.kategorija.text = currentitem.kategorija
 //        holder.koraci.text = currentitem.koraci
 //        holder.sastojci.text = currentitem.sastojci
