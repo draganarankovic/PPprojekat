@@ -59,11 +59,10 @@ class WelcomeActivity : AppCompatActivity() {
         mAuth.signInWithEmailAndPassword(email, sifra)
             .addOnCompleteListener(this) { task ->
                 if (task.isSuccessful) {
-
                     val intent = Intent(this@WelcomeActivity, RaspolozivostActivity::class.java)
                     startActivity(intent)
                 } else {
-                   Toast.makeText(this@WelcomeActivity,"Не постоји корисник са оваквим именом!",Toast.LENGTH_SHORT).show()
+                   Toast.makeText(this@WelcomeActivity,"Неисправан мејл или шифра. Покушајте поново!",Toast.LENGTH_SHORT).show()
 
 
                 }

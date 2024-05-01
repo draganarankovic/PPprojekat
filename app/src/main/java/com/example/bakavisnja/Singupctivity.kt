@@ -65,13 +65,13 @@ class Singupctivity : AppCompatActivity() {
         mAuth.createUserWithEmailAndPassword(email, sifra)
             .addOnCompleteListener(this) { task ->
                 if (task.isSuccessful) {
-
                   //  mAuth.currentUser?.let {addUsertoDB(korisnik,email,it.uid)}
                   addUserTobase(korisnik,email,mAuth.currentUser?.uid!!)
                   val intent = Intent(this@Singupctivity, RaspolozivostActivity::class.java)
+                  finish()
                   startActivity(intent)
                 } else {
-                  Toast.makeText(this@Singupctivity, "milaane draaganeee",Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this@Singupctivity,"Покушајте поново!",Toast.LENGTH_SHORT).show()
                 }
             }
     }

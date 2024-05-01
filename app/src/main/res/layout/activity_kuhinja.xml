@@ -57,7 +57,7 @@
         android:textColor="#E85265"
         android:fontFamily="sans-serif-black"
         android:layout_marginLeft="30dp"
-        android:layout_marginTop="295dp" />
+        android:layout_marginTop="300dp" />
 
 
     <LinearLayout
@@ -130,7 +130,7 @@
         app:layout_constraintEnd_toEndOf="@id/slatkajela"
         app:layout_constraintTop_toTopOf="@id/slanajela"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        android:layout_marginTop="320dp"
+        android:layout_marginTop="335dp"
         tools:listitem="@layout/recept_item">
 
     </androidx.recyclerview.widget.RecyclerView>

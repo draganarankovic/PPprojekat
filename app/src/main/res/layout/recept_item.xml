@@ -4,7 +4,7 @@
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="#F3C6A9"
-    android:layout_margin="1dp">
+    android:layout_margin="5dp">
 
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/abv"
@@ -13,7 +13,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     app:cardElevation = "8dp"
     android:background="#F3C6A9"
-    android:layout_margin="16dp"
+    android:layout_margin="5dp"
     android:orientation="horizontal"
     android:layout_centerInParent="true">
 
@@ -34,17 +34,20 @@
 
             <ImageView
                 android:id="@+id/slikaa"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
+                android:layout_width="150dp"
+                android:layout_height="120dp"
+                android:layout_gravity="center"
+                android:layout_centerInParent="true"
                 android:src="@drawable/kolacic">
             </ImageView>
 
 
             <TextView
                 android:id="@+id/naslov_recepta"
-                android:layout_width="100dp"
-                android:layout_height="30dp"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
                 android:text="proba"
+                android:textStyle="bold"
                 android:textAlignment="center"
                 android:textColor="@color/white"></TextView>
 

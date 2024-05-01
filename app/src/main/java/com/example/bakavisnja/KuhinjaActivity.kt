@@ -24,7 +24,8 @@ class KuhinjaActivity : AppCompatActivity() {
     private lateinit var dbref: DatabaseReference
     private lateinit var listaSlanih: RecyclerView
     private lateinit var listaSlatkih: RecyclerView
-    private lateinit var receptArrayList: ArrayList<Recept>
+    private lateinit var receptArrayListSlano: ArrayList<Recept>
+    private lateinit var receptArrayListSlatko: ArrayList<Recept>
 
     @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -44,7 +45,9 @@ class KuhinjaActivity : AppCompatActivity() {
 //        listaSlanih.layoutManager = LinearLayoutManager(this)
 //        listaSlanih.setHasFixedSize(true)
 
-        receptArrayList = arrayListOf<Recept>()
+        receptArrayListSlano = arrayListOf<Recept>()
+        receptArrayListSlatko = arrayListOf<Recept>()
+
         getReceptData()
 
 
@@ -82,13 +85,16 @@ class KuhinjaActivity : AppCompatActivity() {
 
                 if(snapshot.exists()){
                     for(receptSnapshot in snapshot.children) {
-                        val recept = receptSnapshot.getValue(Recept::class.java)
-                        receptArrayList.add(recept!!)
+                        val recept = receptSnapshot.getValue(Recept::class.java)!!
+                        if(recept.kategorija == "слано") {
+                            receptArrayListSlano.add(recept!!)
+                        }
+                        else {
+                            receptArrayListSlatko.add(recept!!)
+                        }
                     }
-                    listaSlanih.adapter = MyAdapter(receptArrayList)
-                    listaSlatkih.adapter = MyAdapter(receptArrayList)
-
-
+                    listaSlanih.adapter = MyAdapter(receptArrayListSlano)
+                    listaSlatkih.adapter = MyAdapter(receptArrayListSlatko)
                 }
             }
 
