@@ -11,6 +11,7 @@ Podaci se skladište u Firebase: Firestore bazi podataka.
 
 ## Galerija
 <img src="https://github.com/draganarankovic/PPprojekat/blob/main/app/src/main/res/drawable/galerija/Collage_20240501_013446.jpg">
+<img src="https://github.com/draganarankovic/PPprojekat/blob/main/app/src/main/res/drawable/galerija/Collage_20240502_031156.jpg">
 
 
 ## Autori
