@@ -9,9 +9,10 @@ Naša aplikacija predstavlja digitalnu kolekciju autentičnih recepata iz Bakino
 Aplikacija je u potpunosti napisana u programskom jeziku Kotlin u razvojnom okruženju Android Studio.
 Podaci se skladište u Firebase: Firestore bazi podataka.
 
-## Galerije
+## Galerija
+<img src="https://github.com/draganarankovic/PPprojekat/blob/main/app/src/main/res/drawable/galerija/Collage_20240501_013446.jpg">
 
 
 ## Autori
-Dragana Rankovic (mi21240) - dragana.rankovic001@gmail.com
+Dragana Rankovic (mi21240) - dragana.rankovic001@gmail.com\
 Dragana Katic (mi21091) - draganak3108@gmail.com
