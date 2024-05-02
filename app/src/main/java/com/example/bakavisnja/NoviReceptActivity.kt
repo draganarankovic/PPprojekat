@@ -46,6 +46,7 @@ class NoviReceptActivity : AppCompatActivity() {
     private var imerecepta = ""
     private var sastojci = ""
     private var koraci = ""
+    private var odabrana = false
 
     val kategorije = arrayOf("слатко", "слано")
     val vreme = arrayOf("15-30 минута", "30-60 минута", "више од сат времена")
@@ -174,6 +175,7 @@ class NoviReceptActivity : AppCompatActivity() {
                 Toast.makeText(applicationContext,"Слика је неуспешно учитана!",Toast.LENGTH_SHORT).show()
             }
         }
+        odabrana = true
     }
 
 
@@ -183,8 +185,8 @@ class NoviReceptActivity : AppCompatActivity() {
         sastojci = binding.sastojci.text.toString().trim()
         koraci = binding.koraci.text.toString().trim()
 
-        if(imerecepta.isEmpty() || sastojci.isEmpty() || koraci.isEmpty()){
-            Toast.makeText(this,"Молимо Вас, попуните сва поља!",Toast.LENGTH_SHORT).show()
+        if(imerecepta.isEmpty() || sastojci.isEmpty() || koraci.isEmpty() || odabrana == false){
+            Toast.makeText(this,"Молимо Вас, попуните сва поља и убаците слику!",Toast.LENGTH_SHORT).show()
         }
         else{
             addReceptFirebase()
