@@ -82,7 +82,6 @@ class KuhinjaActivity : AppCompatActivity() {
         dbref = FirebaseDatabase.getInstance().getReference("Recept")
         dbref.addValueEventListener(object: ValueEventListener{
             override fun onDataChange(snapshot: DataSnapshot) {
-
                 if(snapshot.exists()){
                     for(receptSnapshot in snapshot.children) {
                         val recept = receptSnapshot.getValue(Recept::class.java)!!

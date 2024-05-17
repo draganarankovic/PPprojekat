@@ -6,46 +6,6 @@
     android:layout_height="match_parent"
     android:id="@+id/main"
     android:background="#F3C6A9" >
-    <!--    tools:context=".MainActivity"-->
-    <!--    tools:ignore="missingConstraints" >-->
-
-    <!--    <Button-->
-    <!--        android:id="@+id/button"-->
-    <!--        android:layout_width="303dp"-->
-    <!--        android:layout_height="68dp"-->
-    <!--        android:layout_x="53dp"-->
-    <!--        android:layout_y="546dp"-->
-    <!--        android:layout_gravity="center_horizontal"-->
-    <!--        android:background="@drawable/round_btn"-->
-    <!--        android:ellipsize="middle"-->
-    <!--        android:text="Нови налог"-->
-    <!--        android:textAlignment="center"-->
-    <!--        android:textAllCaps="false"-->
-    <!--        android:textColor="#FFFDFD"-->
-    <!--        android:textColorLink="#2196F3"-->
-    <!--        android:textSize="34sp"-->
-    <!--        app:layout_constraintEnd_toEndOf="parent"-->
-    <!--        app:layout_constraintStart_toStartOf="parent"-->
-    <!--        tools:layout_editor_absoluteY="577dp" />-->
-
-    <!--    <TextView-->
-    <!--        android:layout_width="323dp"-->
-    <!--        android:layout_height="64dp"-->
-    <!--        android:fontFamily="sans-serif-black"-->
-    <!--        android:text="Бака Вишња"-->
-    <!--        android:textAlignment="center"-->
-    <!--        android:textColor="#E85265"-->
-    <!--        android:textSize="50sp"-->
-    <!--        android:textStyle="bold"-->
-    <!--        android:typeface="normal"-->
-    <!--        app:layout_constraintBottom_toBottomOf="parent"-->
-    <!--        app:layout_constraintEnd_toEndOf="parent"-->
-    <!--        app:layout_constraintHorizontal_bias="0.5"-->
-    <!--        app:layout_constraintStart_toStartOf="parent"-->
-    <!--        app:layout_constraintTop_toTopOf="parent"-->
-    <!--        app:layout_constraintVertical_bias="0.149"-->
-    <!--        android:layout_centerHorizontal="true"-->
-    <!--        />-->
 
     <TextView
         android:id="@+id/BakaVisnja"

@@ -185,8 +185,17 @@ class NoviReceptActivity : AppCompatActivity() {
         sastojci = binding.sastojci.text.toString().trim()
         koraci = binding.koraci.text.toString().trim()
 
-        if(imerecepta.isEmpty() || sastojci.isEmpty() || koraci.isEmpty() || odabrana == false){
-            Toast.makeText(this,"Молимо Вас, попуните сва поља и убаците слику!",Toast.LENGTH_SHORT).show()
+        if(imerecepta.isEmpty()) {
+            Toast.makeText(this,"Молимо Вас, унесите име рецепта!",Toast.LENGTH_SHORT).show()
+        }
+        else if(odabrana == false){
+            Toast.makeText(this,"Молимо Вас, додајте слику!",Toast.LENGTH_SHORT).show()
+        }
+        else if(sastojci.isEmpty()) {
+            Toast.makeText(this,"Молимо Вас, унесите састојке!",Toast.LENGTH_SHORT).show()
+        }
+        else if(koraci.isEmpty()) {
+            Toast.makeText(this,"Молимо Вас, унесите кораке!",Toast.LENGTH_SHORT).show()
         }
         else{
             addReceptFirebase()

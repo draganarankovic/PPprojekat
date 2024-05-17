@@ -3,6 +3,7 @@ package com.example.bakavisnja
 import android.app.Dialog
 import android.content.Intent
 import android.os.Bundle
+import android.security.keystore.KeyNotYetValidException
 import android.view.LayoutInflater
 import android.view.Window
 import android.widget.Button
@@ -25,6 +26,7 @@ import java.io.File
 class MojNalogActivity : AppCompatActivity() {
 
     private lateinit var btnOdjaviSe: Button
+    private lateinit var btnNazad: Button
     private lateinit var binding: ActivityMojNalog2Binding
     private lateinit var mAuth : FirebaseAuth
     private lateinit var dbref: DatabaseReference
@@ -42,12 +44,11 @@ class MojNalogActivity : AppCompatActivity() {
         setContentView(binding.root)
         btnOdjaviSe = findViewById(R.id.odjavise)
         mAuth = FirebaseAuth.getInstance()
-
+        btnNazad = findViewById(R.id.vratise)
         uid = mAuth.currentUser?.uid.toString()
 
         dbref = FirebaseDatabase.getInstance().getReference("user")
         if(uid.isNotEmpty()){
-            Toast.makeText(applicationContext,"$uid", Toast.LENGTH_SHORT).show()
             getUserData()
         }
         else {
@@ -59,6 +60,11 @@ class MojNalogActivity : AppCompatActivity() {
             mAuth.signOut()
             val intent = Intent(this, MainActivity::class.java)
             finish()
+            startActivity(intent)
+        }
+
+        btnNazad.setOnClickListener{
+            val intent = Intent(this, KuhinjaActivity::class.java)
             startActivity(intent)
         }
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
